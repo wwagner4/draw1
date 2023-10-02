@@ -64,7 +64,6 @@ struct MyWindowHandler {
 
 impl WindowHandler for MyWindowHandler {
     fn on_draw(&mut self, helper: &mut WindowHelper, graphics: &mut Graphics2D) {
-        helper.set_resizable(false);
         graphics.clear_screen(Color::BLACK);
 
         for o in &self.objs {
@@ -77,5 +76,10 @@ impl WindowHandler for MyWindowHandler {
         self.objs = self.objs.iter()
             .map(|o| mv(o, &self.screen))
             .collect_vec();
+    }
+
+    fn on_resize(&mut self, helper: &mut WindowHelper<()>, size_pixels: UVec2) {
+        println!("resize {:?}", &size_pixels);
+        self.screen = size_pixels;
     }
 }
