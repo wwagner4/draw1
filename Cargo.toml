@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-itertools = "0.11.0"
+image = "0.24.7"
+imageproc = "0.23.0"
+itertools = "0.12.0"
 rand = "0.8.5"
-speedy2d = "1.12.0"
+speedy2d = "2.0.0"
